@@ -1,0 +1,343 @@
+:root {
+    --primary-color: #FF7A00;
+    --primary-darker: #e66a00;
+    --secondary-color: #FFFFFF;
+    --dark-color: #1a1a1a;
+    --text-color: #4f4f4f;
+    --light-gray: #f7f7f7;
+    --font-headings: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+section, footer {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-headings);
+    color: var(--dark-color);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-section {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-darker));
+    color: var(--secondary-color);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-section h1 {
+    color: var(--secondary-color);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 600px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 18px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-headings);
+    border-radius: 50px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+#servicos {
+    background-color: var(--light-gray);
+}
+
+.container-servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card-servico {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    width: 320px;
+    padding: 30px;
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.07);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 40px -5px rgba(0,0,0,0.15);
+}
+
+.card-servico h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+#diferenciais li {
+    list-style: none;
+    font-size: 1.2em;
+    line-height: 2;
+    font-weight: 500;
+}
+
+/* ========================================= */
+/* 5. SEÇÃO SOBRE NÓS (NOVO LAYOUT)          */
+/* ========================================= */
+
+#sobre {
+    background-color: var(--secondary-color);
+}
+
+.sobre-container {
+    max-width: 900px; /* Podemos até diminuir um pouco a largura */
+    margin: 0 auto; /* Para centralizar o container */
+}
+
+.sobre-texto-wrapper {
+    text-align: center; /* Centraliza todo o texto */
+    margin-bottom: 50px; /* Cria um espaço grande entre o texto e o slideshow */
+}
+
+.sobre-texto-wrapper h2 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+.sobre-texto-wrapper h3 {
+    font-family: var(--font-body);
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.sobre-texto-wrapper p {
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o parágrafo se ele for mais estreito */
+}
+
+/* A regra do .swiper continua quase a mesma, apenas garantimos que ela existe */
+.swiper {
+    width: 100%;
+    min-height: 400px; /* Ajuste esta altura como preferir */
+    border-radius: 10px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+    color: var(--primary-color);
+}
+
+.swiper .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
+
+/* ========================================= */
+/* 7. RODAPÉ E BOTÃO DE CONTATO              */
+/* ========================================= */
+
+footer#contato {
+    background-color: var(--dark-color);
+    color: var(--light-gray);
+    padding: 60px 20px;
+}
+
+footer#contato h2 {
+    color: var(--secondary-color);
+    font-size: 2.5em;
+}
+
+.contato-subtitulo {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* Cor oficial do WhatsApp */
+    color: var(--secondary-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-headings);
+    font-size: 1.2em;
+    display: inline-flex; /* Para alinhar o ícone com o texto */
+    align-items: center;
+    gap: 15px; /* Espaço entre o ícone e o texto */
+    transition: all 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+    background-color: #1DAE53; /* Cor mais escura no hover */
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* O ícone terá a mesma cor do texto (branco) */
+}
+
+.contato-info {
+    margin-top: 50px;
+    opacity: 0.8;
+}
+
+.contato-info p {
+    margin: 5px 0;
+}
+/* Em style.css, na seção 7 */
+
+/* NOVO: Container para os botões */
+.botoes-contato {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+    margin-bottom: 50px;
+}
+
+/* NOVO: Estilo para o botão do Instagram */
+.instagram-button {
+    /* Gradiente com as cores do Instagram */
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--secondary-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-headings);
+    font-size: 1.2em;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* A regra do ícone do WhatsApp agora serve para ambos os botões */
+
+@media (max-width: 768px) {
+    h1, .hero-section h1 { font-size: 2.2rem; }
+    h2, .sobre-texto h2 { font-size: 1.8rem; }
+    section, footer { padding: 60px 20px; }
+
+    .hero-section { min-height: auto; }
+
+    .container-servicos, .sobre-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .card-servico {
+        width: 90%;
+    }
+    
+    .sobre-texto {
+        text-align: center;
+    }
+    
+    .swiper {
+        min-height: 300px;
+    }
+}
