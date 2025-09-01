@@ -10,7 +10,7 @@ A landing page foi criada utilizando tecnologias modernas para garantir desempen
 
 - **HTML5**
 - **CSS3**
-- **JavaScript**
+
 
 
 ## 🚀 Como rodar o projeto localmente
@@ -40,9 +40,7 @@ A landing page foi criada utilizando tecnologias modernas para garantir desempen
 ## 🛠️ Funcionalidades
 
 - Apresentação dos serviços da DNA Autocenter
-- Formulário de contato ou integração com WhatsApp
-- Localização via Google Maps
-- Depoimentos de clientes
+- Integração com WhatsApp
 - Layout responsivo, adaptado para smartphones e desktops
 
 ## 📄 Licença
