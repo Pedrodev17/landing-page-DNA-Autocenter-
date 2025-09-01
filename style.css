@@ -166,6 +166,27 @@ h2 {
 
 /* ========================================= */
 /* 5. SEÇÃO SOBRE NÓS (NOVO LAYOUT)          */
+/* Estilo para a foto única fixa na seção Sobre */
+.sobre-imagem-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.sobre-imagem {
+    max-width: 550px;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    object-fit: cover;
+    transition: box-shadow 0.3s;
+}
+
+.sobre-imagem:hover {
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
 /* ========================================= */
 
 #sobre {
