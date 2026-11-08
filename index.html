@@ -1,136 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNA Autocenter - O Cuidado que seu Carro Merece</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>DNA Autocenter | Oficina mecânica no Socorro, São Paulo</title>
+  <meta name="description" content="Alinhamento, balanceamento, freios, troca de óleo, câmbio automático e injeção eletrônica no Socorro, em São Paulo. Mais de 20 anos de experiência técnica. Peça seu orçamento gratuito pelo WhatsApp.">
+  <meta name="theme-color" content="#17181a">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="DNA Autocenter">
+  <meta property="og:title" content="DNA Autocenter | O cuidado que o seu carro tem no sangue">
+  <meta property="og:description" content="Diagnóstico preciso, orçamento transparente e mais de 20 anos de experiência técnica no Socorro, em São Paulo.">
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="imagens/otimizadas/favicon-32.png">
+  <link rel="apple-touch-icon" href="imagens/otimizadas/apple-touch-icon.png">
+  <link rel="preload" href="fontes/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "DNA Autocenter",
+    "description": "Oficina mecânica especializada em alinhamento, balanceamento, freios, troca de óleo, câmbio automático e injeção eletrônica.",
+    "foundingDate": "2023",
+    "telephone": "+55-11-99451-8554",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua dos Inocentes, 102 - Socorro",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    "sameAs": ["https://www.instagram.com/autocenter_dna/"]
+  }
+  </script>
 </head>
 <body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-    <header class="hero-section">
-        <div class="hero-content">
-            <img src="imagens/logo-dna.jpeg" alt="Logo do Autocenter DNA" class="logo">
-            <h1>DNA Autocenter: O cuidado que o seu carro tem no sangue.</h1>
-            <p>Serviços de alta performance com diagnóstico preciso e a confiança que você procura.</p>
-            <a href="#contato" class="cta-button">Faça um Orçamento Gratuito</a>
-        </div>
-    </header>
+  <svg width="0" height="0" hidden aria-hidden="true">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zM20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M9.4 18.6 3.7 12.9l2.1-2.1 3.6 3.6 8.8-8.8 2.1 2.1z"/></symbol>
+  </svg>
 
-    <main>
-        <section id="servicos">
-            <h2>Serviços Completos para seu Veículo</h2>
-            <div class="container-servicos">
-                <div class="card-servico">
-                    <h3>Alinhamento e Balanceamento</h3>
-                    <p>Precisão para uma direção mais segura e confortável.</p>
-                </div>
-                <div class="card-servico">
-                    <h3>Troca de Óleo e Filtros</h3>
-                    <p>Aumente a vida útil do seu motor com produtos de qualidade.</p>
-                </div>
-                <div class="card-servico">
-                    <h3>Sistema de Freios</h3>
-                    <p>Revisão completa para garantir sua segurança em primeiro lugar.</p>
-                </div>
-                <div class="card-servico">
-                    <h3>Câmbio Automático</h3>
-                    <p>Manutenção especializada para garantir trocas suaves e precisas.</p>
-                </div>
-                <div class="card-servico">
-                    <h3>Injeção Eletrônica</h3>
-                    <p>Diagnóstico e reparo para um desempenho ideal do motor.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="diferenciais">
-            <h2>O DNA do Nosso Atendimento</h2>
-            <ul>
-                <li>✅ Profissionais Certificados</li>
-                <li>✅ Peças de Qualidade Garantida</li>
-                <li>✅ Orçamento Transparente e Justo</li>
-                <li>✅ Garantia Total sobre os Serviços</li>
-            </ul>
-        </section>
-
-       <section id="sobre">
-    <div class="sobre-container">
-
-        <div class="sobre-texto-wrapper">
-            <h2>Sobre  Nos</h2>
-            <h3>A paixão por carros no nosso DNA</h3>
-            <p>
-                Na DNA Autocenter, acreditamos que a excelência em serviços automotivos é o resultado da combinação precisa entre profundo conhecimento técnico e uma gestão focada na experiência do cliente. Fundada em 2023, nossa empresa nasceu da visão compartilhada de seus fundadores, Alexandre e Denise, com o compromisso de estabelecer um novo padrão de qualidade e confiança no mercado.
-
-À frente de nossa área técnica está Alexandre, um profissional com mais de 20 anos de sólida experiência no setor. Seu vasto know-how é a garantia de um diagnóstico preciso e de soluções eficazes, tratando cada veículo com a atenção e a competência que somente duas décadas de dedicação podem oferecer.
-
-Complementando essa expertise, Denise lidera a gestão administrativa e o relacionamento com o cliente. Sua atuação é fundamental para assegurar uma experiência de atendimento superior, marcada pela transparência nos processos, comunicação clara e uma organização impecável, do agendamento à entrega final do seu veículo.
-
-Essa união de competências está na essência do nosso nome. DNA representa os pilares do nosso negócio: Denise e Alexandre. É a assinatura do nosso compromisso com a integridade, a eficiência e, acima de tudo, com a sua tranquilidade.
-
-Convidamos você a conhecer a DNA Autocenter e a experimentar um serviço onde a técnica e o atendimento evoluem juntos.
-
-            </p>
-        </div>
-
-        <div class="sobre-imagem-wrapper">
-            
-            <img src="imagens/foto-oficina.jpg" alt="Imagem ilustrativa sobre nós" class="sobre-imagem">
-
-        </div>
-
-</section>
-
-    </main>
-    
-
-<footer id="contato">
-    <h2>Faça seu Orçamento ou Siga-nos nas Redes</h2>
-    <p class="contato-subtitulo">Clique em um dos botões abaixo para falar conosco ou para ver nossos trabalhos mais recentes!</p>
-
-    <div class="botoes-contato">
-
-        <a 
-          href="https://api.whatsapp.com/message/47BX3HAYTQODM1?autoload=1&app_absent=0"
-          class="whatsapp-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .5c58.3 0 111.3 22.7 151.1 62.5 39.8 39.8 62.5 92.8 62.5 151.1 0 118.7-96.5 215.2-215.2 215.2-37.2 0-72.9-9.6-104.4-27.4l-3.5-2-74.3 19.6 19.9-72.6-2.2-3.6c-19.5-32.3-30.7-69.5-30.7-108.7C6.5 199.8 103 103.3 223.9 103.3zM320.1 309.2c-3.4-1.7-20.1-9.9-23.2-11s-5.4-1.7-7.6 1.7c-2.2 3.4-8.8 11-10.8 13.2-2 2.2-4 2.5-7.4 0.8s-14.5-5.4-27.6-17c-10.2-9.2-17-20.5-19.2-24s-0.2-3.8 1.5-5.4c1.5-1.5 3.4-3.9 5.1-5.8s2.2-3.4 3.4-5.8c1.1-2.2 0.5-4.2-0.3-5.8s-7.6-18.3-10.3-25.1c-2.8-6.8-5.6-5.9-7.8-5.9s-4.4-0.1-6.6-0.1c-2.2 0-5.8 0.8-8.8 3.4s-11.5 11.3-11.5 27.4c0 16.2 11.8 31.8 13.5 33.9s23.2 35.5 56.5 49.7c8.1 3.5 14.4 5.5 19.5 7.2s10.3 2.9 12.1 2.5c2.2-0.5 7.6-3.1 8.7-6.2s1.1-5.8 0.8-6.2c-0.3-0.5-2.2-0.8-4.7-1.7z"/>
-          </svg>
-          Orçamento via WhatsApp
-        </a>
-
-        <a 
-          href="https://www.instagram.com/autocenter_dna/" 
-          class="instagram-button"
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9 26.3 26.2 58 34.4 93.9 36.2 37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-            </svg>
-            Siga-nos no Instagram
-        </a>
+  <header class="topo">
+    <div class="topo__interno">
+      <a class="topo__marca" href="#inicio" aria-label="DNA Autocenter, início">
+        <img src="imagens/otimizadas/logo-dna.png" alt="" width="438" height="130">
+      </a>
+      <nav class="topo__nav" aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#oficina">Oficina</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="botao botao--laranja topo__acao" href="https://api.whatsapp.com/message/47BX3HAYTQODM1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener noreferrer">
+        <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        Pedir orçamento
+      </a>
     </div>
+  </header>
 
-    <div class="contato-info">
-        <p>Endereço: Rua dos Inocentes, 102 - Socorro, SP </p>
-        <p>Telefone: (11) 99451-8554</p>
-        <p>Horário: Seg-Sex das 8h às 18h</p>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero__texto">
+        <p class="sobretitulo sobretitulo--claro">Oficina mecânica no Socorro, São Paulo</p>
+        <h1>O cuidado que o seu carro tem <em>no sangue.</em></h1>
+        <p class="hero__lead">Serviços de alta performance com diagnóstico preciso e a confiança que você procura.</p>
+        <div class="hero__acoes">
+          <a class="botao botao--laranja botao--grande" href="https://api.whatsapp.com/message/47BX3HAYTQODM1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener noreferrer">
+            <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            Orçamento gratuito no WhatsApp
+          </a>
+          <a class="botao botao--contorno botao--grande" href="#servicos">Ver serviços</a>
+        </div>
+        <dl class="hero__fatos">
+          <div><dt>Experiência técnica</dt><dd>+20 anos</dd></div>
+          <div><dt>Atendimento</dt><dd>Seg a Sex, 8h às 18h</dd></div>
+        </dl>
+      </div>
+      <figure class="hero__foto">
+        <img
+          src="imagens/otimizadas/galeria-1-1080.webp"
+          srcset="imagens/otimizadas/galeria-1-640.webp 640w, imagens/otimizadas/galeria-1-1080.webp 1080w"
+          sizes="(min-width: 60rem) 46vw, 100vw"
+          width="1080" height="1350"
+          alt="Vista do alto da oficina DNA Autocenter, com mecânicos trabalhando em carros nos elevadores."
+          fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="secao" id="servicos" aria-labelledby="titulo-servicos">
+      <div class="envoltorio servicos">
+        <div class="servicos__cabeca">
+          <p class="sobretitulo">Serviços</p>
+          <h2 id="titulo-servicos">Serviços completos para o seu veículo</h2>
+          <p>Da manutenção de rotina ao diagnóstico mais detalhado, tudo em um só lugar.</p>
+          <a class="link-seta" href="#contato">Fale com a gente</a>
+        </div>
+        <ol class="servicos__lista">
+          <li class="revelar"><h3>Alinhamento e Balanceamento</h3><p>Precisão para uma direção mais segura e confortável.</p></li>
+          <li class="revelar"><h3>Troca de Óleo e Filtros</h3><p>Aumente a vida útil do seu motor com produtos de qualidade.</p></li>
+          <li class="revelar"><h3>Sistema de Freios</h3><p>Revisão completa para garantir sua segurança em primeiro lugar.</p></li>
+          <li class="revelar"><h3>Câmbio Automático</h3><p>Manutenção especializada para garantir trocas suaves e precisas.</p></li>
+          <li class="revelar"><h3>Injeção Eletrônica</h3><p>Diagnóstico e reparo para um desempenho ideal do motor.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="diferenciais" id="diferenciais" aria-labelledby="titulo-diferenciais">
+      <div class="envoltorio diferenciais__grade">
+        <h2 id="titulo-diferenciais">O DNA do nosso atendimento</h2>
+        <ul>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Profissionais certificados</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Peças de qualidade garantida</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Orçamento transparente e justo</li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-check"/></svg>Garantia total sobre os serviços</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="envoltorio sobre">
+        <figure class="sobre__foto revelar">
+          <img
+            src="imagens/otimizadas/galeria-3-1080.webp"
+            srcset="imagens/otimizadas/galeria-3-640.webp 640w, imagens/otimizadas/galeria-3-1080.webp 1080w"
+            sizes="(min-width: 60rem) 42vw, 100vw"
+            width="1080" height="1136"
+            alt="Alexandre e Denise, fundadores da DNA Autocenter, ao lado de um carro e de um equipamento de troca de óleo do câmbio."
+            loading="lazy" decoding="async">
+        </figure>
+        <div class="sobre__texto">
+          <p class="sobretitulo">Sobre nós</p>
+          <h2 id="titulo-sobre">A paixão por carros no nosso DNA</h2>
+          <p class="sobre__intro">Fundada em 2023, a DNA Autocenter nasceu da visão compartilhada de seus fundadores, com o compromisso de estabelecer um novo padrão de qualidade e confiança no mercado.</p>
+          <div class="fundadores">
+            <article>
+              <span class="fundadores__letra" aria-hidden="true">D</span>
+              <h3>Denise</h3>
+              <p class="fundadores__cargo">Gestão e relacionamento</p>
+              <p>Garante transparência nos processos, comunicação clara e organização impecável, do agendamento à entrega final do seu veículo.</p>
+            </article>
+            <article>
+              <span class="fundadores__letra" aria-hidden="true">A</span>
+              <h3>Alexandre</h3>
+              <p class="fundadores__cargo">Direção técnica</p>
+              <p>Mais de 20 anos de experiência no setor, a garantia de um diagnóstico preciso e de soluções eficazes para cada veículo.</p>
+            </article>
+          </div>
+          <p>Essa união está na essência do nosso nome: <strong>DNA representa Denise e Alexandre</strong>. É a assinatura do nosso compromisso com a integridade, a eficiência e, acima de tudo, com a sua tranquilidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="oficina" id="oficina" aria-labelledby="titulo-oficina">
+      <div class="envoltorio">
+        <div class="oficina__cabeca">
+          <p class="sobretitulo sobretitulo--claro">A oficina</p>
+          <h2 id="titulo-oficina">Um espaço feito para cuidar bem do seu carro</h2>
+        </div>
+        <div class="oficina__fotos">
+          <figure class="revelar">
+            <img
+              src="imagens/otimizadas/galeria-2-1080.webp"
+              srcset="imagens/otimizadas/galeria-2-640.webp 640w, imagens/otimizadas/galeria-2-1080.webp 1080w"
+              sizes="(min-width: 48rem) 62vw, 100vw"
+              width="1080" height="1350"
+              alt="Corredor da oficina com vários carros em atendimento, elevadores e vagas demarcadas no piso."
+              loading="lazy" decoding="async">
+          </figure>
+          <figure class="revelar">
+            <img
+              src="imagens/otimizadas/foto-oficina-390.webp"
+              width="390" height="292"
+              alt="Alexandre na bancada de ferramentas da oficina, com prateleiras de produtos ao fundo."
+              loading="lazy" decoding="async">
+            <figcaption>Ferramentas, produtos e equipamentos organizados para um trabalho bem-feito.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="contato" id="contato" aria-labelledby="titulo-contato">
+      <div class="envoltorio contato__grade">
+        <div>
+          <h2 id="titulo-contato">Vamos cuidar do seu carro?</h2>
+          <p class="contato__lead">Chame no WhatsApp e faça seu orçamento gratuito, ou veja nossos trabalhos mais recentes no Instagram.</p>
+          <div class="contato__botoes">
+            <a class="botao botao--whatsapp botao--grande" href="https://api.whatsapp.com/message/47BX3HAYTQODM1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener noreferrer">
+              <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+              Orçamento via WhatsApp
+            </a>
+            <a class="botao botao--contorno botao--grande" href="https://www.instagram.com/autocenter_dna/" target="_blank" rel="noopener noreferrer">
+              <svg class="icone" aria-hidden="true"><use href="#i-instagram"/></svg>
+              Siga no Instagram
+            </a>
+          </div>
+        </div>
+        <dl class="contato__dados">
+          <div>
+            <dt>Endereço</dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20dos%20Inocentes%2C%20102%20-%20Socorro%2C%20S%C3%A3o%20Paulo%20-%20SP" target="_blank" rel="noopener noreferrer">Rua dos Inocentes, 102<br>Socorro, São Paulo - SP</a></dd>
+          </div>
+          <div>
+            <dt>Telefone</dt>
+            <dd><a href="tel:+5511994518554">(11) 99451-8554</a></dd>
+          </div>
+          <div>
+            <dt>Horário</dt>
+            <dd>Segunda a sexta, das 8h às 18h</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="envoltorio">
+      <p>DNA Autocenter. Técnica e atendimento que evoluem juntos.</p>
     </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+  </footer>
 
+  <a class="barra-whatsapp" href="https://api.whatsapp.com/message/47BX3HAYTQODM1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener noreferrer">
+    <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    Orçamento gratuito no WhatsApp
+  </a>
 </body>
 </html>

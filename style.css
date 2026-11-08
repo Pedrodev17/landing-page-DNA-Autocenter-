@@ -1,364 +1,455 @@
-:root {
-    --primary-color: #FF7A00;
-    --primary-darker: #e66a00;
-    --secondary-color: #FFFFFF;
-    --dark-color: #1a1a1a;
-    --text-color: #4f4f4f;
-    --light-gray: #f7f7f7;
-    --font-headings: 'Poppins', sans-serif;
-    --font-body: 'Roboto', sans-serif;
+/* DNA Autocenter: HTML e CSS puros, sem JavaScript.
+   A paleta vem da própria oficina: bloco grafite, faixa laranja e demarcação amarela. */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("fontes/archivo-variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  color-scheme: light;
+
+  --grafite-900: #17181a;
+  --grafite-800: #232528;
+  --grafite-700: #3a3d42;
+  --cinza-500: #5a5e65;
+  --cinza-300: #b9bcc2;
+  --cinza-100: #f3f2ef;
+  --branco: #fff;
+  --laranja: #ff7a00;
+  --laranja-claro: #ff9433;
+  --laranja-texto: #b34d00; /* laranja com contraste AA sobre fundo claro */
+  --whatsapp: #25d366;
+
+  --fonte: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --texto-sm: 0.9375rem;
+  --texto-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --titulo-3: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --titulo-2: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);
+  --titulo-1: clamp(2.75rem, 1.6rem + 5vw, 5.75rem);
+
+  --margem: clamp(1.25rem, 4vw, 3.5rem);
+  --secao: clamp(4.5rem, 3rem + 7vw, 9rem);
+  --largura: 80rem;
+  --altura-topo: 4.75rem;
+  --raio: 0.375rem;
+  --transicao: 180ms cubic-bezier(0.2, 0.7, 0.3, 1);
 }
+
+/* Base */
+
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-block-start: calc(var(--altura-topo) + 1rem);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: var(--texto-base);
+  line-height: 1.6;
+  color: var(--cinza-500);
+  background: var(--branco);
+  -webkit-font-smoothing: antialiased;
 }
 
-section, footer {
-    padding: 80px 20px;
-    text-align: center;
-}
+h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; }
 
 h1, h2, h3 {
-    font-family: var(--font-headings);
-    color: var(--dark-color);
+  color: var(--grafite-900);
+  font-stretch: 112%;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    font-weight: 700;
-}
+h2 { font-size: var(--titulo-2); }
+h3 { font-size: var(--titulo-3); line-height: 1.2; }
+p { text-wrap: pretty; }
 
 :focus-visible {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 3px;
-    border-radius: 4px;
+  outline: 3px solid var(--laranja);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+.envoltorio {
+  width: 100%;
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding-inline: var(--margem);
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.secao { padding-block: var(--secao); }
+
+.pular {
+  position: absolute;
+  inset-block-start: -5rem;
+  inset-inline-start: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--grafite-900);
+  color: var(--branco);
+  border-radius: var(--raio);
+}
+.pular:focus { inset-block-start: 1rem; }
+
+.sobretitulo {
+  margin-block-end: 1rem;
+  color: var(--laranja-texto);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  font-stretch: 110%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sobretitulo--claro { color: var(--laranja-claro); }
+
+.icone { width: 1.25em; height: 1.25em; flex: none; fill: currentColor; }
+
+/* Botões */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  min-height: 2.75rem;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: var(--raio);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--transicao), border-color var(--transicao), color var(--transicao), transform var(--transicao);
+}
+.botao:active { transform: translateY(1px); }
+.botao--grande { min-height: 3.5rem; padding: 0.875rem 1.75rem; font-size: 1.0625rem; }
+.botao--laranja { background: var(--laranja); color: var(--grafite-900); }
+.botao--laranja:hover { background: var(--laranja-claro); }
+.botao--whatsapp { background: var(--whatsapp); color: var(--grafite-900); }
+.botao--whatsapp:hover { background: #4be083; }
+.botao--contorno { border-color: var(--cinza-500); color: var(--branco); }
+.botao--contorno:hover { border-color: var(--branco); background: rgb(255 255 255 / 0.08); }
+
+.link-seta {
+  display: inline-block;
+  margin-block-start: 1.5rem;
+  color: var(--laranja-texto);
+  font-weight: 700;
+  text-underline-offset: 0.25em;
+}
+.link-seta::after { content: " →"; }
+
+/* Topo */
+
+.topo {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  background: var(--branco);
+  border-block-end: 1px solid #e4e3df;
 }
 
-.hero-section {
-    background: linear-gradient(45deg, var(--primary-color), var(--primary-darker));
-    color: var(--secondary-color);
-    padding: 100px 20px;
+.topo__interno {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 100rem;
+  min-height: var(--altura-topo);
+  margin-inline: auto;
+  padding-inline: var(--margem);
+}
+
+.topo__marca img { width: 9.5rem; }
+.topo__marca { flex: none; }
+
+.topo__nav { display: flex; gap: 0.25rem; margin-inline-start: auto; }
+
+.topo__nav a {
+  display: block;
+  padding: 0.625rem 0.75rem;
+  color: var(--grafite-700);
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transicao);
+}
+.topo__nav a:hover { color: var(--laranja-texto); }
+
+/* Hero */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  min-height: min(calc(100svh - var(--altura-topo)), 60rem);
+  background: var(--grafite-900);
+  border-block-end: 0.875rem solid var(--laranja);
+}
+
+.hero__texto {
+  align-self: center;
+  justify-self: end;
+  width: 100%;
+  max-width: 48rem;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4.5rem) clamp(3rem, 6vw, 6rem) var(--margem);
+}
+
+.hero h1 { color: var(--branco); font-size: var(--titulo-1); font-stretch: 118%; line-height: 0.98; }
+.hero h1 em { color: var(--laranja); font-style: normal; }
+
+.hero__lead {
+  max-width: 34rem;
+  margin-block-start: 1.75rem;
+  color: var(--cinza-300);
+  font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+  line-height: 1.45;
+}
+
+.hero__acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-block-start: 2.5rem; }
+
+.hero__fatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 3.5rem;
+  margin-block-start: 3.5rem;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid var(--grafite-700);
+}
+.hero__fatos dt { color: var(--cinza-300); font-size: var(--texto-sm); }
+.hero__fatos dd { color: var(--branco); font-size: 1.25rem; font-weight: 700; font-stretch: 110%; }
+
+.hero__foto { position: relative; min-height: 20rem; }
+.hero__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+
+/* Serviços */
+
+.servicos {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: start;
+}
+
+.servicos__cabeca { position: sticky; inset-block-start: calc(var(--altura-topo) + 3rem); }
+.servicos__cabeca h2 + p { margin-block-start: 1.25rem; max-width: 26rem; }
+
+.servicos__lista { counter-reset: servico; border-block-start: 2px solid var(--grafite-900); }
+
+.servicos__lista li {
+  counter-increment: servico;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  padding-block: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  border-block-end: 1px solid #dcdbd6;
+}
+
+.servicos__lista li::before {
+  content: counter(servico, decimal-leading-zero);
+  grid-row: span 2;
+  padding-block-start: 0.2em;
+  color: var(--laranja-texto);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.servicos__lista p { margin-block-start: 0.375rem; }
+
+/* Diferenciais */
+
+.diferenciais { padding-block: clamp(3.5rem, 2.5rem + 5vw, 6.5rem); background: var(--laranja); }
+
+.diferenciais__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.diferenciais ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2.5rem; }
+
+.diferenciais li {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--grafite-900);
+  font-size: var(--titulo-3);
+  font-weight: 700;
+  font-stretch: 105%;
+  line-height: 1.2;
+}
+.diferenciais .icone { width: 1.1em; height: 1.1em; margin-block-start: 0.05em; }
+
+/* Sobre */
+
+.sobre {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.sobre__foto img { width: 100%; border-radius: var(--raio); }
+.sobre__intro { margin-block-start: 1.5rem; color: var(--grafite-700); font-size: 1.1875em; line-height: 1.5; }
+
+.fundadores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 2.25rem;
+}
+
+.fundadores article { padding: 1.5rem; background: var(--cinza-100); border-radius: var(--raio); font-size: var(--texto-sm); line-height: 1.55; }
+
+.fundadores__letra {
+  display: block;
+  margin-block-end: 0.75rem;
+  color: var(--laranja-texto);
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-stretch: 125%;
+  line-height: 1;
+}
+.fundadores__cargo { margin-block: 0.125rem 0.75rem; color: var(--grafite-700); font-weight: 600; }
+
+/* Oficina */
+
+.oficina { padding-block: var(--secao); background: var(--grafite-800); color: var(--cinza-300); }
+.oficina h2 { color: var(--branco); }
+.oficina__cabeca { max-width: 48rem; margin-block-end: clamp(2.5rem, 5vw, 4rem); }
+
+.oficina__fotos {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: end;
+}
+
+.oficina__fotos img { width: 100%; border-radius: var(--raio); }
+.oficina__fotos figure:first-child img { aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 72%; }
+.oficina__fotos figcaption { margin-block-start: 1rem; font-size: var(--texto-sm); }
+
+/* Contato */
+
+.contato { padding-block: var(--secao); background: var(--grafite-900); color: var(--cinza-300); border-block-start: 0.875rem solid var(--laranja); }
+.contato h2 { color: var(--branco); }
+
+.contato__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: end;
+}
+
+.contato__lead { max-width: 36rem; margin-block-start: 1.25rem; }
+.contato__botoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-block-start: 2.25rem; }
+
+.contato__dados > div { padding-block: 1.125rem; border-block-start: 1px solid var(--grafite-700); }
+.contato__dados dt { font-size: var(--texto-sm); }
+.contato__dados dd { color: var(--branco); font-weight: 600; }
+.contato__dados a { text-underline-offset: 0.2em; }
+.contato__dados a:hover { color: var(--laranja-claro); }
+
+.rodape {
+  padding-block: 1.75rem;
+  background: var(--grafite-900);
+  border-block-start: 1px solid var(--grafite-800);
+  color: var(--cinza-300);
+  font-size: var(--texto-sm);
+}
+
+/* CTA fixo, apenas no celular */
+
+.barra-whatsapp { display: none; }
+
+/* Responsivo */
+
+@media (max-width: 75rem) {
+  .topo__acao { display: none; }
+}
+
+@media (max-width: 60rem) {
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .hero__texto { justify-self: stretch; max-width: none; padding-inline: var(--margem); }
+  .hero__foto { min-height: 0; aspect-ratio: 16 / 10; }
+  .hero__foto img { object-position: 50% 62%; }
+
+  .servicos, .diferenciais__grade, .sobre, .contato__grade { grid-template-columns: minmax(0, 1fr); }
+  .servicos__cabeca { position: static; }
+}
+
+@media (max-width: 48rem) {
+  html { scroll-padding-block-start: 1rem; }
+
+  body { padding-block-end: calc(4rem + env(safe-area-inset-bottom, 0px)); }
+
+  .topo { position: static; }
+  .topo__interno { flex-direction: column; align-items: flex-start; gap: 0; padding-block-start: 0.875rem; }
+  .topo__marca img { width: 8.5rem; }
+  .topo__nav { flex-wrap: wrap; gap: 0; margin-inline: -0.5rem 0; padding-block: 0.25rem; }
+  .topo__nav a { padding: 0.75rem 0.5rem; font-size: 0.875rem; }
+
+  .hero__acoes .botao { width: 100%; }
+  .contato__botoes .botao { width: 100%; }
+  .oficina__fotos { grid-template-columns: minmax(0, 1fr); }
+  .oficina__fotos figure:first-child img { aspect-ratio: 4 / 5; object-position: 50% 50%; }
+
+  .barra-whatsapp {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 60;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    min-height: 100svh;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 800px;
-}
-
-.logo {
-    width: 180px;
-    height: auto;
-    margin-bottom: 30px;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-.hero-section h1 {
-    color: var(--secondary-color);
-    font-size: 3.5em;
-    margin-bottom: 20px;
+    gap: 0.625rem;
+    min-height: calc(4rem + env(safe-area-inset-bottom, 0px));
+    padding-block-end: env(safe-area-inset-bottom, 0px);
+    background: var(--whatsapp);
+    color: var(--grafite-900);
+    font-size: 1.0625rem;
     font-weight: 700;
-    line-height: 1.2;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    max-width: 600px;
-    animation: fadeInUp 1.2s ease-out;
-}
-
-.cta-button {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 18px 35px;
     text-decoration: none;
-    font-weight: 700;
-    font-family: var(--font-headings);
-    border-radius: 50px;
-    font-size: 1.1em;
-    transition: all 0.3s ease;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1.4s ease-out;
+  }
 }
 
-.cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+@media (max-width: 34rem) {
+  .diferenciais ul, .fundadores { grid-template-columns: minmax(0, 1fr); }
+  .servicos__lista li { grid-template-columns: 2.75rem minmax(0, 1fr); }
 }
 
-#servicos {
-    background-color: var(--light-gray);
+/* Movimento: só como melhoria progressiva. Sem suporte, o conteúdo aparece normalmente. */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
 
-.container-servicos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.card-servico {
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    width: 320px;
-    padding: 30px;
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.07);
-    text-align: left;
-    transition: all 0.3s ease;
-}
-
-.card-servico:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 40px -5px rgba(0,0,0,0.15);
-}
-
-.card-servico h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    font-size: 1.3em;
-}
-
-#diferenciais li {
-    list-style: none;
-    font-size: 1.2em;
-    line-height: 2;
-    font-weight: 500;
-}
-
-/* ========================================= */
-/* 5. SEÇÃO SOBRE NÓS (NOVO LAYOUT)          */
-/* Estilo para a foto única fixa na seção Sobre */
-.sobre-imagem-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.sobre-imagem {
-    max-width: 550px;
-    width: 100%;
-    height: auto;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-    object-fit: cover;
-    transition: box-shadow 0.3s;
-}
-
-.sobre-imagem:hover {
-    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
-}
-/* ========================================= */
-
-#sobre {
-    background-color: var(--secondary-color);
-}
-
-.sobre-container {
-    max-width: 900px; /* Podemos até diminuir um pouco a largura */
-    margin: 0 auto; /* Para centralizar o container */
-}
-
-.sobre-texto-wrapper {
-    text-align: center; /* Centraliza todo o texto */
-    margin-bottom: 50px; /* Cria um espaço grande entre o texto e o slideshow */
-}
-
-.sobre-texto-wrapper h2 {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-}
-
-.sobre-texto-wrapper h3 {
-    font-family: var(--font-body);
-    font-size: 1.5em;
-    font-weight: 400;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-}
-
-.sobre-texto-wrapper p {
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto; /* Centraliza o parágrafo se ele for mais estreito */
-}
-
-/* A regra do .swiper continua quase a mesma, apenas garantimos que ela existe */
-.swiper {
-    width: 100%;
-    min-height: 400px; /* Ajuste esta altura como preferir */
-    border-radius: 10px;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.swiper .swiper-button-prev,
-.swiper .swiper-button-next {
-    color: var(--primary-color);
-}
-
-.swiper .swiper-pagination-bullet-active {
-    background-color: var(--primary-color);
-}
-
-/* ========================================= */
-/* 7. RODAPÉ E BOTÃO DE CONTATO              */
-/* ========================================= */
-
-footer#contato {
-    background-color: var(--dark-color);
-    color: var(--light-gray);
-    padding: 60px 20px;
-}
-
-footer#contato h2 {
-    color: var(--secondary-color);
-    font-size: 2.5em;
-}
-
-.contato-subtitulo {
-    max-width: 500px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
-}
-
-.whatsapp-button {
-    background-color: #25D366; /* Cor oficial do WhatsApp */
-    color: var(--secondary-color);
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-family: var(--font-headings);
-    font-size: 1.2em;
-    display: inline-flex; /* Para alinhar o ícone com o texto */
-    align-items: center;
-    gap: 15px; /* Espaço entre o ícone e o texto */
-    transition: all 0.3s ease;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.whatsapp-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
-    background-color: #1DAE53; /* Cor mais escura no hover */
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor; /* O ícone terá a mesma cor do texto (branco) */
-}
-
-.contato-info {
-    margin-top: 50px;
-    opacity: 0.8;
-}
-
-.contato-info p {
-    margin: 5px 0;
-}
-/* Em style.css, na seção 7 */
-
-/* NOVO: Container para os botões */
-.botoes-contato {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espaço entre os botões */
-    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
-    margin-bottom: 50px;
-}
-
-/* NOVO: Estilo para o botão do Instagram */
-.instagram-button {
-    /* Gradiente com as cores do Instagram */
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    color: var(--secondary-color);
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-family: var(--font-headings);
-    font-size: 1.2em;
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.instagram-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* A regra do ícone do WhatsApp agora serve para ambos os botões */
-
-@media (max-width: 768px) {
-    h1, .hero-section h1 { font-size: 2.2rem; }
-    h2, .sobre-texto h2 { font-size: 1.8rem; }
-    section, footer { padding: 60px 20px; }
-
-    .hero-section { min-height: auto; }
-
-    .container-servicos, .sobre-container {
-        flex-direction: column;
-        gap: 40px;
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .revelar {
+      animation: surgir linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
     }
-    
-    .card-servico {
-        width: 90%;
-    }
-    
-    .sobre-texto {
-        text-align: center;
-    }
-    
-    .swiper {
-        min-height: 300px;
-    }
+  }
+}
+
+@keyframes surgir {
+  from { opacity: 0.2; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: none; }
 }
